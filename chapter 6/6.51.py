@@ -1,16 +1,23 @@
-number = int(input("number"))
+number = 4321
 b = 10
 c = 1
-cur = (number % b ) // c
-k = 1
-number2 = 0
-while number > c :
-    cur2 = cur * k
-    k *= 10
-    b *= 10
-    c *= 10
-    cur = (number % b ) // c
-    number2 += cur2
+curRight = (number % b ) // c
+kol = 1 
 
-    
-print(number2)
+while kol < number:
+    kol *= 10
+kol //= 10
+
+while number > 0:
+    R = number % 10
+    number //= 10
+    kol //= 10
+    print("number =", number, "R =", R)
+    L = int(number // kol)
+    number %= kol
+    print("number =", number, "L =", L)
+    kol /= 10
+if R != L :
+    print("слово не является палиндромом")
+print()
+        
